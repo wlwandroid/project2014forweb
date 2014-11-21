@@ -155,7 +155,7 @@ def getrankbyphone():
         cur = g.db.cursor()
         cur.execute(sql)
         for row in cur.fetchall():
-            result += (row[0]+row[1])
+            result += (row[0]+"       "+row[1])
         return result
 
 

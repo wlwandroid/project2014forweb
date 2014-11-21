@@ -120,7 +120,9 @@ def result():
     score = round(right * 100.0 / num,4)
     name = request.form['name']
     push = _jpush.create_push()
-    push.audience = jpush.all_
+     push.audience = jpush.audience(
+      jpush.alias(alias)
+      )
     push.notification = jpush.notification(alert=name+" "+papername+" 中得了"+score.__str__()+"分")
     push.platform = jpush.all_
     push.send()
